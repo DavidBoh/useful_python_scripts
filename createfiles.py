@@ -34,7 +34,7 @@ def creation():
     file_ext = ""
     active = True
     while active:
-        bash_or_py = input("\nPlease choose file type\npress b for bash\npress p for pyhton\npress q to quit\n\n")
+        bash_or_py = input("\nPlease choose file type\npress s for sh\npress p for pyhton\npress q to quit\n\n")
         
         if bash_or_py == 'q':
             active = False
@@ -44,11 +44,11 @@ def creation():
             createpy()          
             break
 
-        if bash_or_py == 'b':
+        if bash_or_py == 's':
             createbash()
             break
 
-        if bash_or_py != 'b' or bash_or_py != 'p' or bash_or_py != 'q':
+        if bash_or_py != 's' or bash_or_py != 'p' or bash_or_py != 'q':
             print("\nInvalid Input\n")
             creation()
             break
