@@ -5,23 +5,20 @@ import os
 def createpy():
     file_ext = ".py"
     filename = input("Please enter a name for your file: ")
-    file = open("{}{}".format(filename,file_ext), "w")
-    if file_ext == ".py":
+    with open("{}{}".format(filename,file_ext), "w") as file:
         file.write("#!/usr/bin/env python3\n")
-        final_name= "{}{}".format(filename,file_ext)
-        os.chmod(final_name,0o755)
+    final_name= "{}{}".format(filename,file_ext)
+    os.chmod(final_name,0o755)
     print("\nFile {} has been created\n".format(final_name))
-    file.close()
     creation()
 
 def createbash():
     file_ext = ".sh"
     filename = input("Please enter a name for your file: ")
-    file = open("{}{}".format(filename,file_ext), "w")
-    if file_ext == ".sh":
+    with open("{}{}".format(filename,file_ext), "w") as file:
         file.write("#!/bin/sh\n")
-        final_name= "{}{}".format(filename,file_ext)
-        os.chmod(final_name,0o755)
+    final_name= "{}{}".format(filename,file_ext)
+    os.chmod(final_name,0o755)
     print("\nFile {} has been created\n".format(final_name))
     file.close()
     creation()
