@@ -48,7 +48,7 @@ def creation():
     active = True
     while active:
         userinput = input("\nPlease choose file type\npress h for html\npress p for php\npress q to quit\n\n")
-        if userinput == 'h':
+        if userinput == 'q':
             active = False
             break
         if userinput == 'p':
