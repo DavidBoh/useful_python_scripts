@@ -59,7 +59,5 @@ def creation():
             break
         if userinput != 'h' or userinput != 'p' or userinput != 'q':
             print("\nInvalid Input\n")
-            creation()
-            break
-
+            continue
 creation()
