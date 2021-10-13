@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+#Author David Boh // herrboh@live.com
+import os, sys
+
+filename = sys.argv[2]
+flag = sys.argv[1]
+
+def createpy():
+    file_ext = ".py"
+    with open("{}{}".format(filename,file_ext), "w") as file:
+        file.write("#!/usr/bin/env python3\n")
+    final_name= "{}{}".format(filename,file_ext)
+    os.chmod(final_name,0o755)
+    print("\nFile {} has been created\n".format(final_name))
+
+def createbash():
+    file_ext = ".sh"
+    with open("{}{}".format(filename,file_ext), "w") as file:
+        file.write("#!/bin/sh\n")
+    final_name= "{}{}".format(filename,file_ext)
+    os.chmod(final_name,0o755)
+    print("\nFile {} has been created\n".format(final_name))
+    file.close()
+    
+def creation():
+    """this script creates a .py or .sh file based on flags passed when exec    uted (-p or -s).Each file will be created with execute permissions and inside of each file, the first line wille include a shebang #! line argument"""
+    
+    file_ext = ""
+        
+    if flag == '-p':
+        createpy()
+    elif flag == '-s':
+        createbash()
+    else:
+        flag != '-s' or flag != '-p'
+        print("\nInvalid Input\n")
+
+creation()
