@@ -30,6 +30,7 @@ def create_php():
         file.write("require_once \"pdo.php\"\n")
         file.write("\t \n")
         file.write("?>\n")
+        file.write("<!DOCTYPE html>\n")
         file.write("<html lang=\"en\">\n")
         file.write("<head>\n")
         file.write("\t<meta charset=\"UTF-8\">\n")
@@ -60,4 +61,5 @@ def creation():
         if userinput != 'h' or userinput != 'p' or userinput != 'q':
             print("\nInvalid Input\n")
             continue
+
 creation()
