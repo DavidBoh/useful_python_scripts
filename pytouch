@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#Author David Boh // herrboh@live.com
+#Author David Boh // herrboh@gmail.com
 import os, sys
 
 filename = sys.argv[2]
@@ -9,6 +9,12 @@ def createpy():
     file_ext = ".py"
     with open("{}{}".format(filename,file_ext), "w") as file:
         file.write("#!/usr/bin/env python3\n")
+        file.write("\n")
+        file.write("def main():")
+        file.write("\n\n\n\n")
+        file.write("if __name__ == '__main__':")
+        file.write("\n\tmain()")
+
     final_name= "{}{}".format(filename,file_ext)
     os.chmod(final_name,0o755)
     print("\nFile {} has been created\n".format(final_name))
