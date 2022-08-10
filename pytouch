@@ -32,7 +32,8 @@ def creation():
     """this script creates a .py or .sh file based on flags passed when exec    uted (-p or -s).Each file will be created with execute permissions and inside of each file, the first line wille include a shebang #! line argument"""
     
     file_ext = ""
-        
+
+# add try statement        
     if flag == '-p':
         createpy()
     elif flag == '-s':
@@ -40,5 +41,5 @@ def creation():
     else:
         flag != '-s' or flag != '-p'
         print("\nInvalid Input\n")
-
+# catch no parameters error. 
 creation()
