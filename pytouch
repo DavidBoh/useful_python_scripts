@@ -6,9 +6,9 @@ try:
     filename = sys.argv[2]
     flag = sys.argv[1]
 except:
-#Note: error type can make this piece of code work or not. 
+    #Note: error type can make this piece of code work or not. 
     print("Please include params -s for sh, -p for python")
-
+#line 51 checks if the variable named 'flags' exists in local variables
 
 def createpy():
     file_ext = ".py"
@@ -22,7 +22,7 @@ def createpy():
 
     final_name= "{}{}".format(filename,file_ext)
     os.chmod(final_name,0o755)
-    print("\nFile {} has been created\n".format(final_name))
+    print("File {} has been created".format(final_name))
 
 def createbash():
     file_ext = ".sh"
@@ -30,7 +30,7 @@ def createbash():
         file.write("#!/bin/sh\n")
     final_name= "{}{}".format(filename,file_ext)
     os.chmod(final_name,0o755)
-    print("\nFile {} has been created\n".format(final_name))
+    print("File {} has been created".format(final_name))
     file.close()
     
 def creation():
@@ -47,8 +47,9 @@ def creation():
         print("\nInvalid Input\n")
 
 def main():
-    #line 51 checks if the variable named 'flags' exists in local variables
-    if 'flags' in locals():
+    if 'flag' and 'filename' in globals(): 
         creation()
     else:
-        print("")
+        print("",end='')
+
+main()
