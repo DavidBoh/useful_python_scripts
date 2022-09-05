@@ -2,8 +2,13 @@
 #Author David Boh // herrboh@gmail.com
 import os, sys
 
-filename = sys.argv[2]
-flag = sys.argv[1]
+try:
+    filename = sys.argv[2]
+    flag = sys.argv[1]
+except:
+#Note: error type can make this piece of code work or not. 
+    print("Please include params -s for sh, -p for python")
+
 
 def createpy():
     file_ext = ".py"
@@ -33,7 +38,6 @@ def creation():
     
     file_ext = ""
 
-# add try statement        
     if flag == '-p':
         createpy()
     elif flag == '-s':
@@ -41,5 +45,10 @@ def creation():
     else:
         flag != '-s' or flag != '-p'
         print("\nInvalid Input\n")
-# catch no parameters error. 
-creation()
+
+def main():
+    #line 51 checks if the variable named 'flags' exists in local variables
+    if 'flags' in locals():
+        creation()
+    else:
+        print("")
