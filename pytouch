@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 #Author David Boh // herrboh@gmail.com
+
+# TO DO 
+# Avoid file overwrite
+# if user provides file extension (.py or .sh) make sure to delete .py part to avoid
+# cases of files named file.py.py - user regexes to fix this. 
+# include more flags for different types of python files, or use cases. 
+
 import os, sys
 
 try:
@@ -8,7 +15,7 @@ try:
 except:
     #Note: error type can make this piece of code work or not. 
     print("Please include params -s for sh, -p for python")
-#line 51 checks if the variable named 'flags' exists in local variables
+    #main function checks if the variable named 'flags' exists in global variables
 
 def createpy():
     file_ext = ".py"
@@ -16,9 +23,8 @@ def createpy():
         file.write("#!/usr/bin/env python3\n")
         file.write("\n")
         file.write("def main():")
-        file.write("\n\n\n\n")
-        file.write("if __name__ == '__main__':")
-        file.write("\n\tmain()")
+        file.write("\n\n")
+        file.write("main()")
 
     final_name= "{}{}".format(filename,file_ext)
     os.chmod(final_name,0o755)
