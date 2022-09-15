@@ -49,8 +49,7 @@ def creation():
     elif flag == '-s':
         createbash()
     else:
-        flag != '-s' or flag != '-p'
-        print("\nInvalid Input\n")
+        print("Invalid Input")
 
 def main():
     if 'flag' and 'filename' in globals(): 
