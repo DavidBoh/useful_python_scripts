@@ -29,7 +29,8 @@ def createpy():
     final_name= "{}{}".format(filename,file_ext)
     os.chmod(final_name,0o755)
     print("File {} has been created".format(final_name))
-
+    file.close()
+    
 def createbash():
     file_ext = ".sh"
     with open("{}{}".format(filename,file_ext), "w") as file:
