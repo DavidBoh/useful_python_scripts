@@ -4,7 +4,7 @@
 # TO DO 
 # Avoid file overwrite
 # if user provides file extension (.py or .sh) make sure to delete .py part to avoid
-# cases of files named file.py.py - user regexes to fix this. 
+# cases of files named file.py.py - use regexes to fix this. 
 # include more flags for different types of python files, or use cases. 
 
 import os, sys
