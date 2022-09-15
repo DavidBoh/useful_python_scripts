@@ -15,7 +15,7 @@ try:
 except:
     #Note: error type can make this piece of code work or not. 
     print("Please include params -s for sh, -p for python")
-    #main function checks if the variable named 'flags' exists in global variables
+#line 51 checks if the variable named 'flags' exists in local variables
 
 def createpy():
     file_ext = ".py"
@@ -23,20 +23,38 @@ def createpy():
         file.write("#!/usr/bin/env python3\n")
         file.write("\n")
         file.write("def main():")
-        file.write("\n\n")
-        file.write("main()")
+        file.write("\n\n\n\n")
+        file.write("if __name__ == '__main__':")
+        file.write("\n\tmain()")
 
     final_name= "{}{}".format(filename,file_ext)
     os.chmod(final_name,0o755)
     print("File {} has been created".format(final_name))
     file.close()
-    
+
 def createbash():
     file_ext = ".sh"
     with open("{}{}".format(filename,file_ext), "w") as file:
         file.write("#!/bin/sh\n")
     final_name= "{}{}".format(filename,file_ext)
     os.chmod(final_name,0o755)
+    print("File {} has been created".format(final_name))
+    file.close()
+
+def createc():
+  
+    file_ext = ".c"
+
+    with open("{}{}".format(filename,file_ext), "w") as file:
+        file.write("#include <stdio.h>\n")
+        file.write("#include <stdlib.h>\n")
+        file.write("\n")
+        file.write("int main(void){\n")
+        file.write("\tputs(\"Hello, world!\");\n")
+        file.write("\treturn EXIT_SUCCESS;\n")
+        file.write("}\n")
+
+    final_name = "{}{}".format(filename,file_ext)
     print("File {} has been created".format(final_name))
     file.close()
     
@@ -49,6 +67,8 @@ def creation():
         createpy()
     elif flag == '-s':
         createbash()
+    elif flag == '-c':
+        createc()
     else:
         print("Invalid Input")
 
