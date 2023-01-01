@@ -1,2 +1,2 @@
 # Useful Python Scripts
-Some of my personal Python and Shell scripts created by me. I use them frequently. 
+Some Python and Shell scripts created by me. I find them useful and try to use them frequently. 
