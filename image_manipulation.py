@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+
+# Script that 1. Converts to JPEG 2. Resizes image 3. Rotates and moves to a new directory. 
+
+Libraries used: PIL, os, shutil
 import os
 import shutil
 from PIL import Image
